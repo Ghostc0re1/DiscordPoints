@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, GatewayIntentBits } = require('discord.js');
+const client = new Discord.Client({ intents: [GatewayIntentBits.GuildMessages],}); 
 const fs = require('fs');
 const USER_DIR = "\\users\\";
 const CMD_HELP_ALL = "Commands: !points give <usr> <pts> <reason> | !points scoreboard | !points log <usr>", 
@@ -18,7 +19,7 @@ fs.readFile(__dirname + "/auth.txt", function(err, buff) {
 	} else client.login(buff.toString())
 });
 
-fs.mkdir(__dirname + USER_DIR, function(err) {
+fs.mkdir(__dirname + USER_DIR, function(err) { 
 	if(err && err.code !== 'EEXIST') {
 		console.log(err);
 	}
