@@ -1,4 +1,4 @@
-# Simple points bot for Discord using [Discord.js](https://github.com/discordjs/discord.js/). #
+# Simple points bot for Discord using json
 
 **Commands**
 - **PERMISSION:ADMINISTRATOR** *!points give @user amount reason* - Add or remove points from a user (accepts positive and negative numbers).
